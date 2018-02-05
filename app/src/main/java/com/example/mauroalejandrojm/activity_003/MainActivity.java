@@ -1,29 +1,42 @@
 package com.example.mauroalejandrojm.activity_003;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
     private String Tag = "mensaje";
-    private double result;
+    private double result,result_c;
     public double op1,op2;
     public int op;
     public EditText display;
+    public EditText display_00;
+    public Button Button_00;
+    public EditText EditText_00;
+    public int count;
     Button add, subs, mult, div, del;
+    LinearLayout main;
+    ConstraintLayout main_0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        main = (LinearLayout) findViewById(R.id.LinearTest);
+        main_0 = (ConstraintLayout) findViewById(R.id.constraintLayout);
+        count = 1;
         display = findViewById(R.id.tv_00);
         add = findViewById(R.id.b_sum);
         subs = findViewById(R.id.b_res);
@@ -76,22 +89,23 @@ public class MainActivity extends AppCompatActivity {
         catch(NumberFormatException nfe){}
         display.setText("");
         if (op ==1) {
-            result= op1+op2;
+            result_c= op1+op2;
         }
         else if(op==2){
-            result=op1-op2;
+            result_c=op1-op2;
         }
         else if(op==3){
-            result=op1*op2;
+            result_c=op1*op2;
         }
         else if (op==4){
             if (op2==0){
                 display.setText("Error");
             }
             else{
-            result=op1/op2;
+            result_c=op1/op2;
             }
         }
+        result=result_c;
         display.setText(""+result);
         op1=result;
     }
@@ -183,6 +197,37 @@ public class MainActivity extends AppCompatActivity {
         cap=cap+".";
         display.setText(cap);
     }
-
+    public void Temporal(View view){
+        Log.d("TAG","hasta aquí bien"+1);
+        //Editor();
+        GenerateLayout();
+    }
+    public void Editor() {
+        LinearLayout newLayout = new LinearLayout(this);
+        newLayout.setOrientation(LinearLayout.VERTICAL);
+    }
+    public void GenerateLayout() {
+        LinearLayout newLayout = new LinearLayout(this);
+        newLayout.setOrientation(LinearLayout.VERTICAL);
+        EditText EditText_0 = new EditText(this);
+        TextView display_0 = new TextView(this);
+        Button Button_0 = new Button(this);
+        EditText_0.setId(count);
+        Button_0.setTag(count);
+        Button_0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int id = (int) view.getTag();
+                EditText E = (EditText) findViewById(id);
+                Log.d("LayoutGeneratorLog","El boton "+E.getText());
+            }
+        });
+        display_0.setText("Test_0");
+        newLayout.addView(display_00);
+        newLayout.addView(EditText_00);
+        newLayout.addView(Button_00);
+        main.addView(newLayout);
+        count++;
+    }
 
 }

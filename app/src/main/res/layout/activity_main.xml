@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mauroalejandrojm.activity_003.MainActivity">
@@ -18,11 +19,23 @@
             android:id="@+id/tv_00"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="100dp"
             android:backgroundTint="@android:color/transparent"
             android:singleLine="false"
             android:textSize="30sp"
             android:theme="@style/Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Button_0"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="Temporal"
+            app:layout_constraintBottom_toTopOf="@+id/tv_00"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,10 +73,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="7"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="bt7"
-                    />
+                    android:text="7"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_8"
@@ -71,10 +83,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="8"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="bt8"
-                    />
+                    android:text="8"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_9"
@@ -82,12 +93,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="bt9"
                     android:text="9"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     tools:layout_editor_absoluteX="96dp"
-                    tools:layout_editor_absoluteY="8dp"
-                    android:onClick="bt9"
-                    />
+                    tools:layout_editor_absoluteY="8dp" />
 
             </TableRow>
 
@@ -102,10 +112,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="4"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="bt4"
-                    />
+                    android:text="4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_5"
@@ -113,10 +122,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="5"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="bt5"
-                    />
+                    android:text="5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_6"
@@ -124,10 +132,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="6"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="bt6"
-                    />
+                    android:text="6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
             </TableRow>
 
             <TableRow
@@ -141,10 +148,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="bt1"
-                    />
+                    android:text="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_2"
@@ -152,9 +158,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="bt2"
                     android:text="2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                    android:onClick="bt2"/>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_3"
@@ -162,10 +168,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="3"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="bt3"
-                    />
+                    android:text="3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
             </TableRow>
 
             <TableRow
@@ -179,10 +184,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="."
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:onClick="btp"
-                    />
+                    android:text="."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_0"
@@ -190,9 +194,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="bt0"
                     android:text="0"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                    android:onClick="bt0"/>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                 <Button
                     android:id="@+id/b_igu"
@@ -200,9 +204,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="igual"
                     android:text="="
-                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                    android:onClick="igual"/>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
             </TableRow>
         </TableLayout>
@@ -219,7 +223,7 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
 
                 <Button
                     android:id="@+id/b_del"
@@ -227,15 +231,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:onClick="clc"
                     android:text="DEL"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                    android:onClick="clc"/>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
 
                 <Button
                     android:id="@+id/b_ent"
@@ -243,16 +247,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="/"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:onClick="divi"
-                    />
+                    android:text="/"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
 
                 <Button
                     android:id="@+id/b_mul"
@@ -260,16 +263,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="x"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:onClick="multi"
-                    />
+                    android:text="x"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
 
                 <Button
                     android:id="@+id/b_res"
@@ -277,16 +279,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="-"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:onClick="resta"
-                    />
+                    android:text="-"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" >
+                android:layout_weight="1">
 
                 <Button
                     android:id="@+id/b_sum"
@@ -294,10 +295,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="+"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:onClick="suma"
-                    />
+                    android:text="+"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
             </TableRow>
         </TableLayout>
 
