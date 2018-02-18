@@ -17,7 +17,7 @@ import android.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private String Tag = "mensaje";
-    private double result,result_c;
+    private double result,result_c, result_c2;
     public double op1,op2;
     public int op;
     public EditText display;
@@ -25,16 +25,20 @@ public class MainActivity extends AppCompatActivity {
     public Button Button_00;
     public EditText EditText_00;
     public int count;
+    public double result_s[] = new double[10];
+    public int i = 2;
+    public int j = 0;
     Button add, subs, mult, div, del;
     LinearLayout main;
     ConstraintLayout main_0;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        main = (LinearLayout) findViewById(R.id.LinearTest);
+        //main = (LinearLayout) findViewById(R.id.mainLayout);
         main_0 = (ConstraintLayout) findViewById(R.id.constraintLayout);
         count = 1;
         display = findViewById(R.id.tv_00);
@@ -49,35 +53,35 @@ public class MainActivity extends AppCompatActivity {
         try{
             String aux = display.getText().toString();
             op1=Double.parseDouble(aux);
-        }
-        catch (NumberFormatException nfe){};
+        } catch (NumberFormatException nfe){};
         display.setText("");
         op=1;
+        saved();
     }
     public void resta (View view){
         try{
             String aux = display.getText().toString();
             op1=Double.parseDouble(aux);
-        }
-        catch (NumberFormatException nfe){};
+        } catch (NumberFormatException nfe){};
         display.setText("");
         op=2;
+        saved();
     }
     public void multi (View view){
-        try{
+        try {
             String aux = display.getText().toString();
-            op1=Double.parseDouble(aux);
+            op1 = Double.parseDouble(aux);
+        } catch (NumberFormatException nfe) {
         }
-        catch (NumberFormatException nfe){};
         display.setText("");
-        op=3;
+        op = 3;
     }
+
     public void divi (View view){
         try{
             String aux = display.getText().toString();
             op1=Double.parseDouble(aux);
-        }
-        catch (NumberFormatException nfe){};
+        } catch (NumberFormatException nfe){};
         display.setText("");
         op=4;
     }
@@ -85,35 +89,35 @@ public class MainActivity extends AppCompatActivity {
         try {
             String aux2=display.getText().toString();
             op2=Double.parseDouble(aux2);
-        }
-        catch(NumberFormatException nfe){}
+        } catch(NumberFormatException nfe){}
         display.setText("");
         if (op ==1) {
-            result_c= op1+op2;
+            result = result_c + op2;
         }
         else if(op==2){
-            result_c=op1-op2;
+            result = result_c - op2;
         }
         else if(op==3){
-            result_c=op1*op2;
+            result = op1 * op2;
         }
         else if (op==4){
             if (op2==0){
                 display.setText("Error");
             }
             else{
-            result_c=op1/op2;
+            result = op1 / op2;
             }
         }
-        result=result_c;
+        result_c=result;
         display.setText(""+result);
-        op1=result;
+        saved2();
     }
     public void clc (View view) {
         display.setText("");
         op1=0.0;
         op2=0.0;
         result=0.0;
+        result_c= 0.0;
     }
     public void clear (View view){
         if (!display.getText().toString().equals("")){
@@ -197,37 +201,22 @@ public class MainActivity extends AppCompatActivity {
         cap=cap+".";
         display.setText(cap);
     }
-    public void Temporal(View view){
-        Log.d("TAG","hasta aquí bien"+1);
-        //Editor();
-        GenerateLayout();
+    public void saved() {
+        if (op == 1) {
+            result_c = op1 + result_c;
+        }
+        if (op == 2) {
+            result_c = op1 - result_c;
+        }
     }
-    public void Editor() {
-        LinearLayout newLayout = new LinearLayout(this);
-        newLayout.setOrientation(LinearLayout.VERTICAL);
+    public void saved2() {
+        result_s[0] = op1;
+        result_s[1] = op2;
+        result_s[i] = result_c;
+        i++;
+        if (i == 9) {
+        i =0;
+        }
     }
-    public void GenerateLayout() {
-        LinearLayout newLayout = new LinearLayout(this);
-        newLayout.setOrientation(LinearLayout.VERTICAL);
-        EditText EditText_0 = new EditText(this);
-        TextView display_0 = new TextView(this);
-        Button Button_0 = new Button(this);
-        EditText_0.setId(count);
-        Button_0.setTag(count);
-        Button_0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int id = (int) view.getTag();
-                EditText E = (EditText) findViewById(id);
-                Log.d("LayoutGeneratorLog","El boton "+E.getText());
-            }
-        });
-        display_0.setText("Test_0");
-        newLayout.addView(display_00);
-        newLayout.addView(EditText_00);
-        newLayout.addView(Button_00);
-        main.addView(newLayout);
-        count++;
-    }
-
 }
+
